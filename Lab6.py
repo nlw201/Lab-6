@@ -1,3 +1,6 @@
+import sys
+
+
 def encoder():
     userint = input("Enter an 8 character long password that only includes digits:")
     password = ''
@@ -8,12 +11,24 @@ def encoder():
     print(password)
 
 
-# returns the decoded password
-def decoder(password):
-    decoded = ''
-    for num in password:
-        decoded += str((int(num) - 3) % 10)
-    return decoded
+def main():
+    choose = int(input('Menu \n'
+                       '---- \n'
+                       '1. Encode Password \n'
+                       '2. Decode Password \n'
+                       '3. Exit \n'))
+    if choose == 1:
+        encoder()
+
+    if choose == 2:
+        decoder()
+
+    if choose == 3:
+        x = False
+        sys.exit()
+
+    while choose != 3:
+        main()
 
 
-encoder()
+main()
