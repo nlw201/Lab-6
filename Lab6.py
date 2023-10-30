@@ -8,4 +8,12 @@ def encoder():
     print(password)
 
 
+# returns the decoded password
+def decoder(password):
+    decoded = ''
+    for num in password:
+        decoded += str((int(num) - 3) % 10)
+    return decoded
+
+
 encoder()
